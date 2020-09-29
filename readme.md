@@ -12,6 +12,10 @@ The source of the news is from some official news site. Will added more later.
 - Tribun : https://www.tribunnews.com/corona
 - CNN : https://www.cnnindonesia.com/tag/corona
 
+### Note
+
+I limit the requests for this API to only 100 requests per 10 minutes. If you need to increase the limit please contact me.
+
 ### TODO
 
 - [ ] Add more news site

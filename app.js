@@ -2,6 +2,8 @@ const express = require('express');
 const fs = require('fs');
 const CronJob = require('cron').CronJob;
 const moment = require('moment');
+const rateLimit = require('express-rate-limit');
+
 const getNews = require('./crawler');
 
 console.log('Before job instantiation');
@@ -17,6 +19,12 @@ console.log('After job instantiation');
 job.start();
 
 const app = express();
+
+const limiter = rateLimit({
+  windowMs: 10 * 60 * 1000, // 10 mins
+  max: 100, // Max request
+});
+app.use(limiter);
 
 app.get('/', async (req, res) => {
   const rawdata = fs.readFileSync('news.json');
