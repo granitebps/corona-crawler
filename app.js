@@ -5,9 +5,13 @@ const moment = require('moment');
 const getNews = require('./crawler');
 
 console.log('Before job instantiation');
-const job = new CronJob('0 * * * *', async function () {
-  console.log('Crawled at : ' + moment().format('DD-MM-YYYY, HH:mm'));
-  await getNews();
+const job = new CronJob({
+  cronTime: '0 * * * *',
+  onTick: async function () {
+    console.log('Crawled at : ' + moment().format('DD-MM-YYYY, HH:mm'));
+    await getNews();
+  },
+  runOnInit: true,
 });
 console.log('After job instantiation');
 job.start();
