@@ -17,6 +17,7 @@ const getPageDetik = async () => {
         title,
         link,
         image,
+        source: 'detik',
       };
       detik.push(data);
     } else {

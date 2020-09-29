@@ -18,6 +18,7 @@ const getPageCnn = async () => {
           title,
           link,
           image,
+          source: 'cnn',
         };
         cnn.push(data);
       } else {

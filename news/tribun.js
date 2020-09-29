@@ -17,6 +17,7 @@ const getPageTribun = async () => {
         title,
         link,
         image,
+        source: 'tribun',
       };
       tribun.push(data);
     } else {

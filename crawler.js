@@ -13,25 +13,21 @@ const getNews = async () => {
   const cnn = await cnnNews();
   const data = {
     crawled_at: moment(),
-    news: {
-      news_source: [
-        {
-          name: 'detik',
-          url: 'https://www.detik.com/tag/corona',
-        },
-        {
-          name: 'tribun',
-          url: 'https://www.tribunnews.com/corona',
-        },
-        {
-          name: 'cnn',
-          url: 'https://www.cnnindonesia.com/tag/corona',
-        },
-      ],
-      detik,
-      tribun,
-      cnn,
-    },
+    news_source: [
+      {
+        name: 'detik',
+        url: 'https://www.detik.com/tag/corona',
+      },
+      {
+        name: 'tribun',
+        url: 'https://www.tribunnews.com/corona',
+      },
+      {
+        name: 'cnn',
+        url: 'https://www.cnnindonesia.com/tag/corona',
+      },
+    ],
+    news: [...detik, ...tribun, ...cnn],
   };
 
   const json = JSON.stringify(data);
