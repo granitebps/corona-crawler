@@ -1,0 +1,22 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "description": "Corona Crawler",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "author": "Granite Bagas",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "cheerio": "^1.0.0-rc.3",
+    "cron": "^1.8.2",
+    "express": "^4.17.1",
+    "moment": "^2.29.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
