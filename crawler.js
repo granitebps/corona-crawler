@@ -21,25 +21,27 @@ const getNews = async () => {
     stats: {
       ID: indStats,
     },
-    news_source: [
-      {
-        name: 'detik',
-        url: 'https://www.detik.com/tag/corona',
-      },
-      {
-        name: 'tribun',
-        url: 'https://www.tribunnews.com/corona',
-      },
-      {
-        name: 'cnn',
-        url: 'https://www.cnnindonesia.com/tag/corona',
-      },
-    ],
-    news: [...detik, ...tribun, ...cnn],
+    news: {
+      news_source: [
+        {
+          name: 'detik',
+          url: 'https://www.detik.com/tag/corona',
+        },
+        {
+          name: 'tribun',
+          url: 'https://www.tribunnews.com/corona',
+        },
+        {
+          name: 'cnn',
+          url: 'https://www.cnnindonesia.com/tag/corona',
+        },
+      ],
+      data: [...detik, ...tribun, ...cnn],
+    }
   };
 
   const json = JSON.stringify(data);
-  fs.writeFile('news.json', json, (err) => {
+  fs.writeFile('corona.json', json, (err) => {
     if (err) throw err;
     console.log('Data written to file');
   });

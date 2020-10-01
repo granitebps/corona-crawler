@@ -27,7 +27,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 app.get('/', async (req, res) => {
-  const rawdata = fs.readFileSync('news.json');
+  const rawdata = fs.readFileSync('corona.json');
   const data = JSON.parse(rawdata);
   res.json(data);
 });
