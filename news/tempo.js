@@ -1,11 +1,10 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-const getPageTempo = async () => {
-  const { data } = await axios.get('https://www.tempo.co/tag/covid-19');
-  const tempo = [];
+const crawlTempo = (element) => {
+  const lists = [];
 
-  const $ = cheerio.load(data);
+  const $ = cheerio.load(element);
   const articleCol = $('#article').children('.col')[0];
   const list = $(articleCol).find('ul');
   list.children('li').each((i, el) => {
@@ -20,12 +19,25 @@ const getPageTempo = async () => {
         image,
         source: 'tempo',
       };
-      tempo.push(data);
+      lists.push(data);
     } else {
       return;
     }
   });
-  return tempo;
+  return lists;
+};
+
+const getPageTempo = async () => {
+  const { data: dataCovid19 } = await axios.get(
+    'https://www.tempo.co/tag/covid-19'
+  );
+  const { data: dataCorona } = await axios.get(
+    'https://www.tempo.co/tag/corona'
+  );
+
+  const tempoCovid19 = crawlTempo(dataCovid19);
+  const tempoCorona = crawlTempo(dataCorona);
+  return [...tempoCovid19, ...tempoCorona];
 };
 
 module.exports = getPageTempo;
