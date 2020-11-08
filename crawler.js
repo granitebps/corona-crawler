@@ -6,6 +6,7 @@ moment.locale('id');
 const detikNews = require('./news/detik');
 const tribunNews = require('./news/tribun');
 const cnnNews = require('./news/cnn');
+const tempoNews = require('./news/tempo');
 
 const IndonesiaStats = require('./statistics/indonesia');
 
@@ -13,6 +14,7 @@ const getNews = async () => {
   const detik = await detikNews();
   const tribun = await tribunNews();
   const cnn = await cnnNews();
+  const tempo = await tempoNews();
 
   const indStats = await IndonesiaStats();
 
@@ -35,8 +37,12 @@ const getNews = async () => {
           name: 'cnn',
           url: 'https://www.cnnindonesia.com/tag/corona',
         },
+        {
+          name: 'tempo',
+          url: 'https://www.tempo.co/tag/covid-19',
+        },
       ],
-      data: [...detik, ...tribun, ...cnn],
+      data: [...detik, ...tribun, ...cnn, ...tempo],
     },
   };
 
