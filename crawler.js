@@ -17,7 +17,7 @@ const getNews = async () => {
   const indStats = await IndonesiaStats();
 
   const data = {
-    crawled_at: moment(),
+    crawled_at: moment().format(),
     stats: {
       ID: indStats,
     },
@@ -37,7 +37,7 @@ const getNews = async () => {
         },
       ],
       data: [...detik, ...tribun, ...cnn],
-    }
+    },
   };
 
   const json = JSON.stringify(data);
