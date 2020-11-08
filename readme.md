@@ -15,7 +15,9 @@ The source of the news is from some official news site. Will added more later. T
 - Detik : https://www.detik.com/tag/corona
 - Tribun : https://www.tribunnews.com/corona
 - CNN : https://www.cnnindonesia.com/tag/corona
-- Tempo : https://www.tempo.co/tag/covid-19
+- Tempo : 
+  - https://www.tempo.co/tag/covid-19
+  - https://www.tempo.co/tag/corona
 
 ### Note
 
@@ -24,7 +26,7 @@ I limit the requests for this API to only 100 requests per 10 minutes. If you ne
 ### TODO
 
 - [ ] Add more news site
-- [ ] Add more news tags per site
+- [ ] Add more news tags per site (if possible)
 - [x] Add Indonesia statistics crawler
 - [ ] Find a way to get published/created date of the news. Some news already have it
 - [ ] Add more country statistics crawler
