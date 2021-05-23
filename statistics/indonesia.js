@@ -9,7 +9,7 @@ const getIndStat = async () => {
 
     const $ = cheerio.load(data);
     $('#maincounter-wrap').each((i, el) => {
-      const count = parseInt($(el).find('span').text().replaceAll(',', ''));
+      const count = parseInt($(el).find('span').text().replace(/,/g, ''));
       if (i === 0) {
         stats.cases = count;
       } else if (i === 1) {
