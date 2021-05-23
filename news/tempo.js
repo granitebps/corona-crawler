@@ -36,7 +36,7 @@ const getPageTempo = async () => {
     const tempoCorona = crawlTempo(dataCorona);
     return [...tempoCovid19, ...tempoCorona];
   } catch (error) {
-    console.log(error);
+    console.log('Tempo Error', error.message);
     return [
       {
         title: 'Error',

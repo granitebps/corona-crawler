@@ -27,7 +27,7 @@ const getPageTribun = async () => {
     });
     return tribun;
   } catch (error) {
-    console.log(error);
+    console.log('Tribun Error', error.message);
     return [
       {
         title: 'Error',

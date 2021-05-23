@@ -20,7 +20,7 @@ const getIndStat = async () => {
     });
     return stats;
   } catch (error) {
-    console.log(error);
+    console.log('Stats Error', error.message);
     return {
       cases: 'Error',
       deaths: 'Error',

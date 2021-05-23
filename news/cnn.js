@@ -28,7 +28,7 @@ const getPageCnn = async () => {
       });
     return cnn;
   } catch (error) {
-    console.log(error);
+    console.log('CNN Error', error.message);
     return [
       {
         title: 'Error',

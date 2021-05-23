@@ -27,7 +27,7 @@ const getPageDetik = async () => {
     });
     return detik;
   } catch (error) {
-    console.log(error);
+    console.log('Detik Error', error.message);
     return [
       {
         title: 'Error',
