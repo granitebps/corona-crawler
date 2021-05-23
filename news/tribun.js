@@ -28,12 +28,14 @@ const getPageTribun = async () => {
     return tribun;
   } catch (error) {
     console.log(error);
-    return {
-      title: 'Error',
-      link: 'Error',
-      image: 'Error',
-      source: 'tribun',
-    };
+    return [
+      {
+        title: 'Error',
+        link: 'Error',
+        image: 'Error',
+        source: 'tribun',
+      },
+    ];
   }
 };
 

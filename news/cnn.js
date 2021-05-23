@@ -29,12 +29,14 @@ const getPageCnn = async () => {
     return cnn;
   } catch (error) {
     console.log(error);
-    return {
-      title: 'Error',
-      link: 'Error',
-      image: 'Error',
-      source: 'cnn',
-    };
+    return [
+      {
+        title: 'Error',
+        link: 'Error',
+        image: 'Error',
+        source: 'cnn',
+      },
+    ];
   }
 };
 

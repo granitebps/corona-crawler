@@ -28,12 +28,14 @@ const getPageDetik = async () => {
     return detik;
   } catch (error) {
     console.log(error);
-    return {
-      title: 'Error',
-      link: 'Error',
-      image: 'Error',
-      source: 'detik',
-    };
+    return [
+      {
+        title: 'Error',
+        link: 'Error',
+        image: 'Error',
+        source: 'detik',
+      },
+    ];
   }
 };
 

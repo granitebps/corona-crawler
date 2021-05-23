@@ -37,12 +37,14 @@ const getPageTempo = async () => {
     return [...tempoCovid19, ...tempoCorona];
   } catch (error) {
     console.log(error);
-    return {
-      title: 'Error',
-      link: 'Error',
-      image: 'Error',
-      source: 'tempo',
-    };
+    return [
+      {
+        title: 'Error',
+        link: 'Error',
+        image: 'Error',
+        source: 'tempo',
+      },
+    ];
   }
 };
 
