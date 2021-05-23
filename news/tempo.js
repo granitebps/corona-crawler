@@ -28,16 +28,22 @@ const crawlTempo = (element) => {
 };
 
 const getPageTempo = async () => {
-  const { data: dataCovid19 } = await axios.get(
-    'https://www.tempo.co/tag/covid-19'
-  );
-  const { data: dataCorona } = await axios.get(
-    'https://www.tempo.co/tag/corona'
-  );
+  try {
+    const { data: dataCovid19 } = await axios.get('https://www.tempo.co/tag/covid-19');
+    const { data: dataCorona } = await axios.get('https://www.tempo.co/tag/corona');
 
-  const tempoCovid19 = crawlTempo(dataCovid19);
-  const tempoCorona = crawlTempo(dataCorona);
-  return [...tempoCovid19, ...tempoCorona];
+    const tempoCovid19 = crawlTempo(dataCovid19);
+    const tempoCorona = crawlTempo(dataCorona);
+    return [...tempoCovid19, ...tempoCorona];
+  } catch (error) {
+    console.log(error);
+    return {
+      title: 'Error',
+      link: 'Error',
+      image: 'Error',
+      source: 'tempo',
+    };
+  }
 };
 
 module.exports = getPageTempo;
